@@ -1,0 +1,222 @@
+@font-face {
+    font-family: "小赖字体 SC";
+    font-style: normal;
+    font-weight: normal;
+    src: url("https://my.microsoftpersonalcontent.com/personal/5bbdc156d0f7345f/_layouts/15/download.aspx?UniqueId=627a3077-6982-4769-9fbf-fc8a0ed3c9de&Translate=false&tempauth=v1e.eyJzaXRlaWQiOiI2OGVhMDIyMS03YTIzLTQ4ODAtYjQ0OC1lNDVlOTAyN2RlYzciLCJhcHBpZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDA0ODE3MTBhNCIsImF1ZCI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMC9teS5taWNyb3NvZnRwZXJzb25hbGNvbnRlbnQuY29tQDkxODgwNDBkLTZjNjctNGM1Yi1iMTEyLTM2YTMwNGI2NmRhZCIsImV4cCI6IjE3MzY1MTg5MTEifQ.5viuLlkhWxIdjxcIRTBxT9b8Y2m0R1eZ5oaxTz0UJ_3hR1To7nLPmmPMsgVyR1FpGLzTAHYxj3p841T3b4JZBe7dxmwyj0UuCFeJkVVrg6BgXMRlNlUfShEfLm-kGasw9elN0i96w-IfFKHPO-7I5EpTvbC_y3vI-2l4njIIJ7RM3XtUfb4n0U_Gs1dhpD97jbAxpGzr9xxKLNcfVyfV6y8qXhjhixg2KqNDNdjvfNysmy4KtHY4_Z-04TDMZ9JbLE5YV07vzlcck8P0TWnQjTb7LGQ-mJ7cmzU2ACyZnQAkoQWgQV0l0X60PeeYvvJT7OVxZaN5IP30AE6BB148CViV86ndSJAlqUbQywelG5r1jgIDI6RQjMmqC-pcUHweJQ7m4owZn2GrAIzPM0tnBg.WlQW4OHJ37d5AgHLSXvWoXOr5SlnHVzb7a_tB3utlGQ&ApiVersion=2.0&AVOverride=1");
+}
+body{
+    font-family: "小赖字体 SC",Arial,Helvetica,sans-serif;
+    cursor: default;
+}
+h1{
+    display: inline-block;
+    margin: 20px auto;
+    width: 300px;
+    height: 1.2em;
+    text-align: center;
+    line-height: 1.2em;
+    font-size: 40px;
+    background-color: #95d6ff;
+    border-radius: 10px;
+    color: black;
+}
+/*id为search，也就是form表单的样式*/
+#search{
+    margin: 20px auto;
+    width: 400px;
+    border-radius: 5px;
+    border: 1px solid #00b7ff;
+    font-size: 20px;
+    text-align: center;
+    box-shadow: 0 0 5px #00b7ff;
+}
+/*from内文本框的一系列样式*/
+#search-text{
+    margin: 20px auto;
+    width: 250px;
+    height: 25px;
+    border: 1px solid #00b7ff;
+    border-radius: 5px;
+    background-color: white;
+}
+#search-text:hover{
+    cursor: text;
+    outline: none;
+    box-shadow: 0 0 5px #00b7ff;}
+#search-text:focus{
+    outline: none;
+    box-shadow: 0 0 5px #00b7ff;
+}
+/*文本框上文字的样式*/
+#search p{
+    margin: 25px auto 6px auto;
+}
+/*搜索按钮的样式*/
+#search-button{
+    vertical-align: middle;
+    margin-left: 6px;
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #00b7ff;
+    background-color: #00b7ff;
+    color: white;
+}
+#search-button:hover{
+    cursor: pointer;
+    box-shadow: 0 0 5px #00b7ff;
+}
+/*搜索结果的样式*/
+#search-result{
+    display: none;
+    margin: 20px auto;
+    width: 950px;
+    height: 900px;
+    border-radius: 5px;
+    border: 1px solid #00b7ff;
+    box-shadow: 0 0 5px #00b7ff;
+}
+/*json回应框的样式*/
+#search-result-json{
+    display: inline-block;
+    float: left;
+    margin: 10px;
+    width: 450px;
+    height: 500px;
+    border-radius: 5px;
+    border: 1px solid #00b7ff;
+    box-shadow: 0 0 5px #00b7ff;
+    font-size: 20px;
+}
+/*json回应框内的文本框的样式*/
+#search-result-json-text{
+    resize: none;
+    margin: 3px auto auto 7px;
+    width: 430px;
+    height: 437px;
+    border-radius: 5px;
+    border: 1px solid #00b7ff;
+    font-size: 0.5em;
+}
+/*快速操作框的样式*/
+#search-result-quick{
+    float: right;
+    margin: 10px;
+    width: 450px;
+    height: 500px;
+    border-radius: 5px;
+    border: 1px solid #00b7ff;
+    box-shadow: 0 0 5px #00b7ff;
+    font-size: 20px;
+}
+/*快速操作框内的选择框的样式*/
+#search-result-quick-choose{
+    text-align: center;
+    margin: 10px auto;
+    width: 430px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #00b7ff;
+    font-size: 0.8em;
+}
+/*快速操作框内的选择框中的选择栏的样式*/
+#search-result-quick-choose-select{
+    display: inline-block;
+    margin: 6px;
+    width: 55px;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid #00b7ff;
+    font-size: 0.8em;
+}
+#search-result-quick-choose-select:hover{
+    cursor: pointer;
+    box-shadow: 0 0 5px #00b7ff;
+}
+/*快速操作框内的按钮的样式*/
+#search-result-quick-choose-btn{
+    display: inline-block;
+    margin: 10px auto auto 10px;
+    width: 80px;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid #00b7ff;
+    background-color: #00b7ff;
+    color: white;
+}
+#search-result-quick-choose-btn:hover{
+    cursor: pointer;
+    box-shadow: 0 0 5px #00b7ff;
+}
+/*最终结果框的样式*/
+#search-result-final{
+    display: inline-block;
+    margin: 10px;
+    width: 930px;
+    height: 355px;
+    border-radius: 5px;
+    border: 1px solid #00b7ff;
+    box-shadow: 0 0 5px #00b7ff;
+}
+.song-img {
+    display: inline-block;
+    float: left;
+    vertical-align: top;
+    width: 300px;
+    height: 300px;
+    margin: -16px auto auto 12px;
+    border-radius: 7px
+}
+.song-data {
+    display: inline-block;
+    float: left;
+    margin-left: 25px;
+    width: 590px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.song-name {
+    display: inline-block;
+    width: 550px;
+    height: 1.1em;
+    font-weight: bold;
+    font-size: 2em;
+}
+.song-data-author, .song-data-author {
+    display: inline-block;
+    font-style: normal;
+}
+.qqurlbtn{
+    display: inline-block;
+    margin: auto auto auto 20px;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid #00b7ff;
+    background-color: #00b7ff;
+    color: white;
+}
+.qqurlbtn:hover{
+    cursor: pointer;
+    box-shadow: 0 0 5px #00b7ff;
+}
+.song-url {
+    display: inline-flex;
+    align-items: center;
+}
+.song-url-audio{
+    display: inline-block;
+    margin: 10px auto auto 10px;
+    width: 400px;
+}
+#new-tips{
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    width: 400px;
+    height: 2em;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ccc;
+}

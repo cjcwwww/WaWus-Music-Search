@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>哇呜的音乐搜索</title>
+    <meta name="Author" content="ShirokoWaWu">
+    <meta name="description" content="哇呜制作的一个基于使用星之阁API的音乐搜索网页 使用了jquery的ajax">
+    <meta name="copyright" content="没版权（悲">
+    <link rel="icon" href="resource/icon.png" type="image/png" />
+    <link href="css/gobal.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<script src="jquery-3.7.1.min.js"></script>
+<script src="dotdotdot.js"></script>
+<script src="js/normal.js"></script>
+<div id="new-tips">由于接口服务器最近遭受攻击，所以本程序开始使用作者（哇呜）提供的请求密钥请求数据，请您切勿频繁查询</div>
+<div style="text-align: center"><h1 title="哇呜制作~">哇呜的音乐搜索</h1><p style="display: inline-block;font-weight: bold">&nbsp;V.0.2.3</p></div>
+<div id="search">
+    <p>输入你要搜索的音乐名称！</p>
+    <div><label for="search-text"></label><input type="text" id="search-text"><input type="submit" value="搜索 !" id="search-button"></div>
+</div>
+<div id="search-result">
+    <div id="search-result-json">
+        <p style="margin-top: 6px;margin-left: 7px;">回应（json）</p>
+        <label for="search-result-json-text"></label><textarea id="search-result-json-text" readonly ></textarea>
+    </div>
+    <div id="search-result-quick">
+        <p style="margin-top: 6px;margin-left: 7px; margin-bottom: 0">快速操作</p>
+        <div id="search-result-quick-choose" style="display: none;">
+            <p style="display: inline-block">获取</p><label for="search-result-quick-choose-select">第</label><select id="search-result-quick-choose-select">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select><p style="display: inline-block">首歌曲的详细数据</p>
+            <input id="search-result-quick-choose-btn" type="button" value="获取">
+        </div>
+    </div>
+    <div id="search-result-final">
+        <p style="margin-top: 6px;margin-left: 7px;">最终结果</p><br>
+        <div id="search-result-final-2"></div>
+    </div>
+</div>
+<div style="width: 120%;">
+    <p>使用注意事项</p>
+    <ul>
+        <li>请勿频繁查询音乐信息，以免被API服务器判定为恶意刷搜索而被封IP</li>
+        <li>如遇到BUG还请谅解并将BUG反馈给我，感谢你的反馈</li>
+        <li>本程序仅供学习和娱乐使用，不得用于任何商业目的。</li>
+        <li>程序中使用的音乐搜索API可能会受到服务提供商的限制和变更，我不保证其稳定性和可用性。</li>
+        <li>搜索结果中的音乐链接和相关信息可能会随着时间的推移而失效或变得不准确。</li>
+        <li>此程序除了查询和获取JS库功能，其余功能不会联网，所以我不对用户通过本应用程序获取的任何音乐文件或信息的合法性、版权或质量负责。</li>
+        <li>用户在使用本程序的功能时，应遵守所有适用的法律法规，包括但不限于版权法和隐私法。</li>
+        <li>如果您发现任何侵权或违法行为，请及时联系我，我将尽力采取措施进行处理。</li>
+    </ul>
+    <p>作者：ShirokoWaWu哇呜呜呜</p>
+    <p>邮箱：cjcwawuwuwu@gmail.com</p><br>
+</div>
+<div>
+    <p>最后更新时间：2025/1/10 22:15 PM</p><br>
+</div>
+</body>
+
+<!-- 更新日志 -->
+
+
+<!--
+
+    V.0.1
+    2024/12/22 5:57 AM
+
+    构建文档大体结构，建立基本程序，正式发行
+
+-->
+
+<!--
+
+    V.0.2
+    2025/1/4 3:31 AM
+
+    修复bug
+    1.解决了单曲详细信息结果栏下载地址undefined的问题（src的属性路径是data.data.src）
+
+    优化内容
+    1.优化了快速操作栏的样式
+    2.优化快速操作栏的显示方式，将动态添加改为JS操作display隐藏和显示，把其内容放在了HTML中
+    3.优化小细节，json text文本框的高度
+    4.优化文档语法
+
+    新增内容
+    1.新增了使用注意事项
+    2.在h1大标题后新增了版本号
+    3.新增了作者信息和最后更新时间
+
+    计划下次更新
+    1.增加翻页功能
+    2.优化结果栏的显示方式
+    3.大改歌曲详细信息的显示方式，添加更多信息(0.2.1已实现)
+
+-->
+
+<!--
+
+    V.0.2.1
+    2025/1/4 20:30 PM
+
+    优化内容
+    1.优化搜索逻辑，分开了搜索键和二次获取键的代码块
+    2.优化第一次搜索时结果栏，将数量改为动态生成
+
+    新增内容
+    1.大改了详细信息的显示方式，添加更多信息
+    2.为翻页功能打了基础
+    3.新增服务器返回错误码的解析
+
+-->
+
+<!--
+
+    V.0.2.2
+    2025/1/5 2:00 AM
+
+    优化内容
+    1.优化文档语法（把一大堆烦人地警告去掉力）
+
+    新增内容
+    1.用if和正则表达式判断了src的属性（URL）是否有效，有效则显示audio元素，无效则显示文本框
+
+-->
+
+<!--
+
+    V.0.2.3
+    2025/1/10 22:15 PM
+
+    特别注意
+    1.由于接口服务器最近遭受攻击，所以开始使用请求密钥请求数据
+
+    优化内容
+    1.优化歌曲详细信息栏中audio和qqurl按钮的排版
+    2.新增dotdotdot省略号插件，并应用到了歌曲详细信息中的文字信息
+    3.新增@font-face嵌入字体和icon图标，用微软onedrive作为CDN
+    4.将搜索前的返回区隐藏，搜索后显示，更人性化（吧？
+
+    太懒了本来想着直接搞0.3的结果发现一堆小问题所以又搞了0.2.3
+
+-->
+</html>
